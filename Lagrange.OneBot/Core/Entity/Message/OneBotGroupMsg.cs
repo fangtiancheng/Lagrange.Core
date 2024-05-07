@@ -38,7 +38,7 @@ public class OneBotGroupStringMsg(uint selfId, uint groupUin, string message, Bo
 
     [JsonPropertyName("message_id")] public int MessageId { get; set; } = messageId;
 
-    [JsonPropertyName("message_seq")] public int MessageSeq { get; set; } = messageSeq;
+    [JsonPropertyName("message_seq")] public uint MessageSeq { get; set; } = messageSeq;
 
     [JsonPropertyName("group_id")] public uint GroupId { get; set; } = groupUin;
     
