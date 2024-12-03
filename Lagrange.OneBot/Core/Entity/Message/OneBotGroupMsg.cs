@@ -4,13 +4,15 @@ using Lagrange.Core.Common.Entity;
 namespace Lagrange.OneBot.Core.Entity.Message;
 
 [Serializable]
-public class OneBotGroupMsg(uint selfId, uint groupUin, List<OneBotSegment> message, string rawMessage, BotGroupMember member, int messageId) : OneBotEntityBase(selfId, "message")
+public class OneBotGroupMsg(uint selfId, uint groupUin, List<OneBotSegment> message, string rawMessage, BotGroupMember member, int messageId, uint messageSeq) : OneBotEntityBase(selfId, "message")
 {
     [JsonPropertyName("message_type")] public string MessageType { get; set; } = "group";
 
     [JsonPropertyName("sub_type")] public string SubType { get; set; } = "normal";
 
     [JsonPropertyName("message_id")] public int MessageId { get; set; } = messageId;
+
+    [JsonPropertyName("message_seq")] public uint MessageSeq { get; set; } = messageSeq;
 
     [JsonPropertyName("group_id")] public uint GroupId { get; set; } = groupUin;
     
@@ -28,13 +30,15 @@ public class OneBotGroupMsg(uint selfId, uint groupUin, List<OneBotSegment> mess
 }
 
 [Serializable]
-public class OneBotGroupStringMsg(uint selfId, uint groupUin, string message, BotGroupMember member, int messageId) : OneBotEntityBase(selfId, "message")
+public class OneBotGroupStringMsg(uint selfId, uint groupUin, string message, BotGroupMember member, int messageId, uint messageSeq) : OneBotEntityBase(selfId, "message")
 {
     [JsonPropertyName("message_type")] public string MessageType { get; set; } = "group";
 
     [JsonPropertyName("sub_type")] public string SubType { get; set; } = "normal";
 
     [JsonPropertyName("message_id")] public int MessageId { get; set; } = messageId;
+
+    [JsonPropertyName("message_seq")] public uint MessageSeq { get; set; } = messageSeq;
 
     [JsonPropertyName("group_id")] public uint GroupId { get; set; } = groupUin;
     
